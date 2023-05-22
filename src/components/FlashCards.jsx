@@ -73,19 +73,24 @@ const Titulo = styled.div`
 `;
 
 const Footer = styled.div`
-width: 370px;
+width: 372px;
 height: 75px;
+display: flex;
+align-items: center;
+justify-content: center;
 background-color: #ffffff;
 position: fixed;
 position: absolute;
 bottom: 0;
 right: 0;
 text-align: center;
-border: 3px solid #fff;
+border: 2px solid #444343;
+
 h2{
 font-family: 'Recursive';
 font-weight: 400;
 font-size: 18px;
 font-style: normal;
+
 }
 `;
