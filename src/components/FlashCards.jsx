@@ -33,8 +33,8 @@ export default function FlashCards(){
 }
 
 const Container = styled.div`
-  width: 400px;
-  min-height: 1100px;
+  width: 375px;
+  min-height: 1090px;
   background-color: #FB6B6B;
   margin: 0px auto;
   font-family: 'Recursive', sans-serif;
@@ -73,7 +73,7 @@ const Titulo = styled.div`
 `;
 
 const Footer = styled.div`
-width: 395px;
+width: 370px;
 height: 75px;
 background-color: #ffffff;
 position: fixed;
@@ -88,6 +88,4 @@ font-weight: 400;
 font-size: 18px;
 font-style: normal;
 }
-
-
 `;

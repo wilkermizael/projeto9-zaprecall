@@ -14,4 +14,9 @@ margin: 0;
 padding: 0;
 height: 100vh;
 background-color: #c1c1c1;
+
+@media (max-width: 365px) {
+    height: 366px;
+  }
+
 `;
