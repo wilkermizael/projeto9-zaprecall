@@ -1,14 +1,18 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { styled } from "styled-components";
-import setaPlay from "../assets/seta_play.png"
-import seta_Virar from '../assets/seta_virar.png'
+import setaPlay from '../assets/seta_play.png'
+import seta_Virar from "../assets/seta_virar.png"
+import icone_certo from "../assets/icone_certo.png"
+import icone_quase from "../assets/icone_quase.png"
+import icone_erro from "../assets/icone_erro.png"
 export default function Question ({cards,index, cont, setcont}){
 
    let [primeiratela , setprimeiratela] = useState(true)
    let [segundatela , setsegundatela] = useState(false)
    let [terceiratela, setterceiratela] = useState(false)
    let [quartatela, setquartatela]= useState(false)
+   let [icone, seticone]= useState('')
    let [linha, setlinha] = useState('')
    //let [meucont, setmeucont] = useState(0)
    const naolembrei = '#FF3030';
@@ -24,6 +28,7 @@ export default function Question ({cards,index, cont, setcont}){
     setlinha('#FF3030')
     contador++
     setcont(cont + contador)
+    seticone(icone_erro)
 }
     function quaseLembrei(){
     setterceiratela(false)
@@ -31,6 +36,7 @@ export default function Question ({cards,index, cont, setcont}){
     setlinha('#FF922E')
     contador++
     setcont(cont + contador)
+    seticone(icone_quase)
 }
 function lembrei(){
     setterceiratela(false)
@@ -38,6 +44,7 @@ function lembrei(){
     setlinha('#2FBE34')
     contador++
     setcont(cont + contador)
+    seticone(icone_certo)
 }
 
     function setaInicio(){
@@ -101,7 +108,7 @@ function lembrei(){
             <Estagio4 >
                 <div>
                     <Paragrafo linha={linha}> Pergunta {index + 1 } </Paragrafo>
-                    <img onClick={()=>setaInicio()} src={setaPlay} alt="seta" />    
+                    <img src={icone} alt="seta" />    
                 </div>
                
             </Estagio4>
