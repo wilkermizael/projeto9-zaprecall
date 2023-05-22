@@ -120,7 +120,7 @@ function lembrei(){
 
 const Estagio1 = styled.div`
     
-    min-height: 65px;
+    min-height: 45px;
     background-color: white;
     display: flex;
     justify-content: space-between;

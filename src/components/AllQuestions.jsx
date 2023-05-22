@@ -24,7 +24,7 @@ return(
 
 const PerguntasContainer = styled.div`
 width: 300px;
-height: auto;
+height: 65px;
 box-sizing: content-box;
 display:flex;
 justify-content: space-between;

@@ -36,13 +36,14 @@ const Container = styled.div`
   width: 400px;
   min-height: 1100px;
   background-color: #FB6B6B;
-  margin: 50px auto;
+  margin: 0px auto;
   font-family: 'Recursive', sans-serif;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   position: relative;
+
   
 `;
 
