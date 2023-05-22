@@ -14,6 +14,7 @@ export default function Question ({cards,index, cont, setcont}){
    let [quartatela, setquartatela]= useState(false)
    let [icone, seticone]= useState('')
    let [linha, setlinha] = useState('')
+   let [datatest, setdatatest]= useState('')
    //let [meucont, setmeucont] = useState(0)
    const naolembrei = '#FF3030';
    const quaselembrei ='#FF922E';
@@ -29,6 +30,7 @@ export default function Question ({cards,index, cont, setcont}){
     contador++
     setcont(cont + contador)
     seticone(icone_erro)
+    setdatatest('no-icon')
 }
     function quaseLembrei(){
     setterceiratela(false)
@@ -37,6 +39,7 @@ export default function Question ({cards,index, cont, setcont}){
     contador++
     setcont(cont + contador)
     seticone(icone_quase)
+    setdatatest('partial-icon')
 }
 function lembrei(){
     setterceiratela(false)
@@ -45,6 +48,7 @@ function lembrei(){
     contador++
     setcont(cont + contador)
     seticone(icone_certo)
+    setdatatest('zap-icon')
 }
 
     function setaInicio(){
@@ -62,10 +66,10 @@ function lembrei(){
    
    if(primeiratela == true){
         return(<>
-        <Estagio1>
+        <Estagio1 data-test="flashcard">
             <div>
-                <p> Pergunta {index + 1 } </p>
-                <img onClick={setaInicio} src={setaPlay} alt="seta" />    
+                <p data-test="flashcard-text"> Pergunta {index + 1 } </p>
+                <img data-test="play-btn" onClick={setaInicio} src={setaPlay} alt="seta" />    
             </div>
            
         </Estagio1>
@@ -75,9 +79,9 @@ function lembrei(){
     if(segundatela === true){
         return(
             <>
-            <Estagio2>
+            <Estagio2 >
                 <div>
-                    <p>{cards[index].question} </p>
+                    <p data-test="flashcard-text">{cards[index].question} </p>
                     <img onClick={setaVirar} src={seta_Virar} alt="seta" />    
                 </div>
             </Estagio2>
@@ -90,13 +94,13 @@ function lembrei(){
             <>
             <Estagio3>
             <div>
-                <p>{cards[index].answer} </p>
+                <p data-test="flashcard-text">{cards[index].answer} </p>
             </div>
             <div>
                 
-                <Botao onClick={naoLembrei} cor={naolembrei}>Não lembrei</Botao>
-                <Botao onClick={quaseLembrei} cor={quaselembrei}>Quase lembrei</Botao> 
-                <Botao onClick={lembrei} cor={zap}>Zap!</Botao>  
+                <Botao data-test="no-btn" onClick={naoLembrei} cor={naolembrei}>Não lembrei</Botao>
+                <Botao data-test="partial-btn" onClick={quaseLembrei} cor={quaselembrei}>Quase lembrei</Botao> 
+                <Botao data-test="zap-btn" onClick={lembrei} cor={zap}>Zap!</Botao>  
             </div>
             </Estagio3>
             </>
@@ -107,8 +111,8 @@ function lembrei(){
         return(<>
             <Estagio4 >
                 <div>
-                    <Paragrafo linha={linha}> Pergunta {index + 1 } </Paragrafo>
-                    <img src={icone} alt="seta" />    
+                    <Paragrafo data-test="flashcard-text" linha={linha}> Pergunta {index + 1 } </Paragrafo>
+                    <img data-test={datatest} src={icone} alt="seta" />    
                 </div>
                
             </Estagio4>

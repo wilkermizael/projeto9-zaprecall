@@ -25,7 +25,7 @@ export default function FlashCards(){
 
             <AllQuestions cards={perguntas} cont={cont} setcont={setcont} />
 
-            <Footer>
+            <Footer data-test="footer">
                 <h2> {cont}/8 CONCLUÍDOS </h2>
             </Footer>
         </Container>
